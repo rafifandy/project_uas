@@ -133,6 +133,10 @@ class _movies extends State<Movies> {
                   onTap: () {
                     Preferensi().setMoviesID = item.id;
                     Preferensi().setMoviesStatus = item.status;
+                    Preferensi().setMovieName = item.nama;
+                    Preferensi().setMovieProduksi = item.produksi;
+                    Preferensi().setMovieSutradara = item.sutradara;
+                    Preferensi().setMovieSinopsis = item.sinopsis;
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Nextpage()));
                   },
@@ -206,6 +210,10 @@ class _movies extends State<Movies> {
                   onTap: () {
                     Preferensi().setMoviesID = item.id;
                     Preferensi().setMoviesStatus = item.status;
+                    Preferensi().setMovieName = item.nama;
+                    Preferensi().setMovieProduksi = item.produksi;
+                    Preferensi().setMovieSutradara = item.sutradara;
+                    Preferensi().setMovieSinopsis = item.sinopsis;
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Nextpage()));
                   },
@@ -373,10 +381,9 @@ class _movies extends State<Movies> {
                   children: [
                     Icon(
                       Icons.airplay,
-                      color: Colors.orange[400],
+                      color: Colors.red[900],
                     ),
-                    Text('New Movies',
-                        style: TextStyle(color: Colors.orange[400]))
+                    Text('New Movies', style: TextStyle(color: Colors.red[900]))
                   ],
                 ),
               ),
@@ -391,9 +398,9 @@ class _movies extends State<Movies> {
                   children: [
                     Icon(
                       Icons.airplane_ticket,
-                      color: Colors.grey,
+                      color: Colors.red[900],
                     ),
-                    Text('My Tickets', style: TextStyle(color: Colors.grey))
+                    Text('My Tickets', style: TextStyle(color: Colors.red[900]))
                   ],
                 ),
               ),

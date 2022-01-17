@@ -91,7 +91,7 @@ class Pertama extends State<PertamaPage> {
                   ),
                 ),
                 new Image.asset(
-                  'assets/user_pic.png',
+                  'assets/profil.png',
                   height: 100,
                 ),
                 Container(
@@ -179,7 +179,7 @@ class Pertama extends State<PertamaPage> {
   Widget button() {
     return FloatingActionButton(
       child: Icon(Icons.arrow_forward),
-      backgroundColor: Colors.purple,
+      backgroundColor: Colors.red[900],
       elevation: 0,
       onPressed: () {
         if (formkey.currentState!.validate()) {
