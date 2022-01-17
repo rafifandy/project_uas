@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'pages/login.dart';
+import 'pages/movies.dart';
 import 'model/preferensi.dart';
 
 void main() async {

@@ -31,12 +31,12 @@ class Nextpage extends StatelessWidget {
               Container(
                 height: 225.0,
                 color: Colors.grey[200],
-                // child: Image.network(
-                //   "http://192.168.0.2/img/"+Preferensi().getMoviePath,
-                //   fit: BoxFit.fill,
-                //   width: MediaQuery.of(context).size.width,
-                //   // height: 75,
-                // ),
+                child: Image.network(
+                  "http://192.168.1.12/img/"+Preferensi().getMoviePath,
+                  fit: BoxFit.cover,
+                  width: MediaQuery.of(context).size.width,
+                  // height: 75,
+                ),
                 // WidgetCarousel(
                 //   pages: film.images
                 //       .map((url) => FadeInImage(
@@ -69,7 +69,7 @@ class Nextpage extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      'Status -',
+                      'Status : ',
                       style: TextStyle(
                           // fontFamily: Constant.fontRegular,
                           fontWeight: FontWeight.bold),
@@ -92,7 +92,7 @@ class Nextpage extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      'Produksi -',
+                      'Produksi : ',
                       style: TextStyle(
                           // fontFamily: Constant.fontRegular,
                           fontWeight: FontWeight.bold),
@@ -116,7 +116,7 @@ class Nextpage extends StatelessWidget {
                 child: Wrap(
                   children: <Widget>[
                     Text(
-                      'Sutradara -',
+                      'Sutradara : ',
                       style: TextStyle(
                           // fontFamily: Constant.fontRegular,
                           fontWeight: FontWeight.bold),
@@ -140,7 +140,7 @@ class Nextpage extends StatelessWidget {
                 child: Wrap(
                   children: <Widget>[
                     Text(
-                      'Sinopsis -',
+                      'Sinopsis : ',
                       style: TextStyle(
                           // fontFamily: Constant.fontRegular,
                           fontWeight: FontWeight.bold),

@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'mmovies.dart';
+import 'user.dart';
 
 class Preferensi {
   static late SharedPreferences _sharedPreferences;
@@ -40,10 +41,15 @@ class Preferensi {
   String get getLanguage => _sharedPreferences.getString('language') ?? '';
 
   set setMoviesStatus(int status) {
-    _sharedPreferences.setInt('Mstatus', status);
+    if (status == 0)
+        _sharedPreferences.setString('Mstatus', 'Browse');
+    else if (status == 1)
+      _sharedPreferences.setString('Mstatus', 'Now Playing');
+    else
+      _sharedPreferences.setString('Mstatus', 'Coming Soon');
   }
 
-  int get getMoviesStatus => _sharedPreferences.getInt('Mstatus') ?? 0;
+  String get getMoviesStatus => _sharedPreferences.getString('Mstatus') ?? '';
 
   set setMoviesID(int id) {
     _sharedPreferences.setInt('MID', id);
@@ -55,12 +61,12 @@ class Preferensi {
     _sharedPreferences.setString('sutradara', sutradara);
   }
 
-  get getMovieSutradara => _sharedPreferences.getString('sutradara' ?? '');
+  get getMovieSutradara => _sharedPreferences.getString('sutradara') ?? '';
   set setMovieSinopsis(String sinopsis) {
     _sharedPreferences.setString('sinopsis', sinopsis);
   }
 
-  get getMovieSinopsis => _sharedPreferences.getString('sinopsis' ?? '');
+  get getMovieSinopsis => _sharedPreferences.getString('sinopsis') ?? '';
   set setMovieProduksi(String produksi) {
     _sharedPreferences.setString('produksi', produksi);
   }
@@ -70,6 +76,11 @@ class Preferensi {
   set setMovieName(String nama) {
     _sharedPreferences.setString('nama', nama);
   }
-
   String get getMovieName => _sharedPreferences.getString('nama') ?? '';
+
+  set setMoviePath(String file_name){
+    _sharedPreferences.setString('file_name', file_name);
+  }
+  get getMoviePath => _sharedPreferences.getString('file_name') ?? '';
+
 }

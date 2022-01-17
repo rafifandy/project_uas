@@ -21,7 +21,7 @@ class Movies extends StatefulWidget {
 
 class _movies extends State<Movies> {
   List<Mmovies> nowPlayingMovies = [];
-  String base_url = 'http://192.168.43.246/image/';
+  String base_url = 'http://192.168.1.12/img/';
   bool loading = true;
   List<Widget> imageSliders = [];
 
@@ -39,7 +39,7 @@ class _movies extends State<Movies> {
     });
 
     final response =
-        await http.get(Uri.parse('http://192.168.43.246/api/moviesnowplaying'));
+        await http.get(Uri.parse('http://192.168.1.12/api/moviesnowplaying'));
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
@@ -60,6 +60,7 @@ class _movies extends State<Movies> {
                     Preferensi().setMovieProduksi = item.produksi;
                     Preferensi().setMovieSutradara = item.sutradara;
                     Preferensi().setMovieSinopsis = item.sinopsis;
+                    Preferensi().setMoviePath = item.file_name;
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Nextpage()));
                   },
@@ -116,7 +117,7 @@ class _movies extends State<Movies> {
     });
 
     final response =
-        await http.get(Uri.parse('http://192.168.43.246/api/moviesbrowse'));
+        await http.get(Uri.parse('http://192.168.1.12/api/moviesbrowse'));
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
@@ -137,6 +138,7 @@ class _movies extends State<Movies> {
                     Preferensi().setMovieProduksi = item.produksi;
                     Preferensi().setMovieSutradara = item.sutradara;
                     Preferensi().setMovieSinopsis = item.sinopsis;
+                    Preferensi().setMoviePath = item.file_name;
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Nextpage()));
                   },
@@ -193,7 +195,7 @@ class _movies extends State<Movies> {
     });
 
     final response =
-        await http.get(Uri.parse('http://192.168.43.246/api/moviescomingsoon'));
+        await http.get(Uri.parse('http://192.168.1.12/api/moviescomingsoon'));
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
@@ -214,6 +216,7 @@ class _movies extends State<Movies> {
                     Preferensi().setMovieProduksi = item.produksi;
                     Preferensi().setMovieSutradara = item.sutradara;
                     Preferensi().setMovieSinopsis = item.sinopsis;
+                    Preferensi().setMoviePath = item.file_name;
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Nextpage()));
                   },
